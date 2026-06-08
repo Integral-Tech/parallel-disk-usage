@@ -544,6 +544,7 @@ jobs:
 
       - name: Build pdu
         run: |
+          export CARGO_PROFILE_RELEASE_LTO=true CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1
           cargo build --release
           echo "$(pwd)/target/release" >> "$GITHUB_PATH"
 
